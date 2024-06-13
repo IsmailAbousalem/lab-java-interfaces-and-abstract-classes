@@ -15,6 +15,34 @@ public class Main {
         BigDecimal result2 = reverseSign(number2);
         System.out.println(result2);
 
+        System.out.println("-----------------------------------------------------------------------------");
+
+
+//        CAR INVENTORY SYSTEM
+        Car sedan = new Sedan("1HGCM82633A123456", "Honda", 2500, "Accord");
+        Car utilityVehicle = new UtilityVehicle("2FMDK3GC5BBB12345", "Ford", 40000, "Escape", true);
+        Car truck = new Truck("1FTFW1EF3EKD12345", "Ford", 55000, "F-150", 5.5);
+
+        System.out.println(sedan.getInfo());
+        System.out.println(utilityVehicle.getInfo());
+        System.out.println(truck.getInfo());
+
+        System.out.println("-----------------------------------------------------------------------------");
+
+//        VIDEO STREAMING SERVICE
+
+        Video tvSeries = new TvSeries("Breaking Bad", 3000, 62);
+        Video movie = new Movie("Inception", 148, 8.8);
+
+        System.out.println(tvSeries.getInfo());
+        System.out.println(movie.getInfo());
+
+        System.out.println("-----------------------------------------------------------------------------");
+
+
+
+//         INTLIST INTERFACE
+
     }
 
     public static double roundToHundredth(BigDecimal number) {
