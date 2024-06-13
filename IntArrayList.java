@@ -1,9 +1,9 @@
-public class IntArrayList implements IntList{
+public class IntArrayList implements IntList {
     private int[] array;
     private int size;
 
     public IntArrayList(int[] array, int size) {
-        this.array = new int [10];
+        this.array = new int[10];
         this.size = 0;
     }
 
@@ -18,7 +18,10 @@ public class IntArrayList implements IntList{
     }
 
     @Override
-    public void get(int id) {
-
+    public int get(int id) {
+        if (id >= 0 && id < size) {
+            return array[id];
         }
+        return id;
+    }
 }

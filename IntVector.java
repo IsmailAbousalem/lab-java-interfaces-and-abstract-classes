@@ -14,11 +14,14 @@ public class IntVector implements IntList{
             int[] newArray = new int[newLength];
             System.arraycopy(array, 0, newArray, 0, array.length);
             array = newArray;
-        }
+            }
     }
 
     @Override
-    public void get(int id) {
-
+    public int get(int id) {
+        if (id >= 0 && id < size) {
+            return array[id];
         }
+        return id;
+    }
 }
