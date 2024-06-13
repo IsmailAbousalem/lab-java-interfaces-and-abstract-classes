@@ -2,7 +2,7 @@ public class IntArrayList implements IntList {
     private int[] array;
     private int size;
 
-    public IntArrayList(int[] array, int size) {
+    public IntArrayList() {
         this.array = new int[10];
         this.size = 0;
     }
@@ -15,6 +15,7 @@ public class IntArrayList implements IntList {
             System.arraycopy(array, 0, newArray, 0, array.length);
             array = newArray;
         }
+        array[size++] = number;
     }
 
     @Override
@@ -22,6 +23,6 @@ public class IntArrayList implements IntList {
         if (id >= 0 && id < size) {
             return array[id];
         }
-        return id;
+        throw new IndexOutOfBoundsException("Invalid index");
     }
 }

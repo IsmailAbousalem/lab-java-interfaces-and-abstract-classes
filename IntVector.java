@@ -1,8 +1,8 @@
-public class IntVector implements IntList{
+public class IntVector implements IntList {
     private int[] array;
     private int size;
 
-    public IntVector(int[] array, int size) {
+    public IntVector() {
         this.array = new int[20];
         this.size = 0;
     }
@@ -10,11 +10,12 @@ public class IntVector implements IntList{
     @Override
     public void add(int number) {
         if (size == array.length) {
-            int newLength = (int) (array.length * 20);
+            int newLength = array.length * 2;
             int[] newArray = new int[newLength];
             System.arraycopy(array, 0, newArray, 0, array.length);
             array = newArray;
-            }
+        }
+        array[size++] = number;
     }
 
     @Override
@@ -22,6 +23,6 @@ public class IntVector implements IntList{
         if (id >= 0 && id < size) {
             return array[id];
         }
-        return id;
+        throw new IndexOutOfBoundsException("Invalid index");
     }
 }
